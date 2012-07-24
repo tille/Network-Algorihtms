@@ -65,8 +65,11 @@ double calc(string exp){
       }
       op.push(act);
     }else if( act == ")" ){
-      string tope = op.top(); 
-      while( tope != "(" ){
+      
+      if(op.size()) tope = op.top();
+      else break;
+      
+      while( tope != "(" && op.size() ){
         op.pop();
         n2 = term.top(); term.pop(); 
         n1 = term.top(); term.pop();
@@ -76,7 +79,10 @@ double calc(string exp){
       op.pop();
     }else{
       memset(temp,0,128);
-      for( int j=0; j<act.size(); ++j) temp[j]=act[j];
+      for( int j=0; j<act.size(); ++j){
+        if( act[j]-'0' < 10 && act[j]-'0'>-1 ) temp[j]=act[j];
+        else{ err = 1; break; }
+      }
       double num = atof(temp);
       term.push(num);
     }
