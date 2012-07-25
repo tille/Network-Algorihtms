@@ -80,7 +80,7 @@ double calc(string exp){
     }else{
       memset(temp,0,128);
       for( int j=0; j<act.size(); ++j){
-        if( act[j]-'0' < 10 && act[j]-'0'>-1 ) temp[j]=act[j];
+        if( (act[j]-'0' < 10 && act[j]-'0'>-1) || act[j]=='.' ) temp[j]=act[j];
         else{ err = 1; break; }
       }
       double num = atof(temp);
