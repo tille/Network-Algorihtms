@@ -79,11 +79,10 @@ double calc(string exp){
       op.pop();
     }else{
       memset(temp,0,128);
-      for( int j=0; j<act.size(); ++j){
-        if( (act[j]-'0' < 10 && act[j]-'0'>-1) || act[j]=='.' ) temp[j]=act[j];
-        else{ err = 1; break; }
-      }
+      for( int j=0; j<act.size(); ++j) temp[j]=act[j];
       double num = atof(temp);
+      string numStr(temp);
+      if( num == 0 && numStr != "0" ){ err = 1; break; }
       term.push(num);
     }
     ini = strtok(NULL," ");
