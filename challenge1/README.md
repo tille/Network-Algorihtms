@@ -21,3 +21,9 @@ for run the server run this is the command:
 and for run the client only run the binary file with specified server
 
   ./client server_ip
+  
+## Examples
+
+  ( ( 2 + 2 ) * 4 ) / 2
+  2 / 0 => Undefined
+  ( 2 + 4 * 3 )
