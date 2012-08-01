@@ -16,16 +16,18 @@ For compile the files run this:
 
 for run the server run this is the command:
   
-  ./server
+  ./server port
 
-and for run the client only run the binary file with specified server
+and for run the client only run the binary file with specified server and port 
 
-  ./client server_ip
+  ./client server_ip port
   
 ## Examples
 
   ( ( 2 + 2 ) * 4 ) / 2
   
-  2 / 0 => Undefined
+  ( ( 2.1 * 3.4 ) + 2 )
   
   ( 2 + 4 * 3 )
+  
+  1.34 + 500.871 * 3.4

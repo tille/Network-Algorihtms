@@ -14,7 +14,7 @@ using namespace std;
 
 void error(int id) {
   string msg;
-  if(id==1) msg = "Please specific a server";
+  if(id==1) msg = "Please specific a server and port... example => ./client server_ip 2001";
   else if(id==2) msg = "Error opening socket";
   else if(id==3) msg = "Error, no such host";
   else if(id==4) msg = "Error connecting";
@@ -31,7 +31,7 @@ struct package{
 
 int main(int argc, char *argv[]) {
 
-  if( argc < 2 ) error(1);
+  if( argc < 3 ) error(1);
   int id = 1;
   
   int sockfd, portno, n;

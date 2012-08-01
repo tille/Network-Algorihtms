@@ -1,4 +1,4 @@
-/* Este server corre sobre el puerto 2001 
+/* Este server corre sobre un puerto X, pasado como argumento
    Recibe peticiones de multiples clientes y se encarga de crear un hilo 
    para cada uno, los datos que estamos recibiendo seran operaciones matematicas
    y estaran seran evaluadas haciendo uso de la RPN (Notacion Polaca Inversa). */
@@ -107,8 +107,14 @@ void error(const char *msg) {
 
 int main(int argc, char *argv[]) {
 
+  if( argc < 2 ){ 
+    printf("Please specified one Port....\n");
+    exit(0);
+  }
+
   char buffer[260]; buffer[260]= '\0';
   int temp; temp = err = 0;
+  
   
   int sockfd, newsockfd, n;
   struct sockaddr_in serv_addr, client;
@@ -117,7 +123,7 @@ int main(int argc, char *argv[]) {
   
   serv_addr.sin_family = AF_INET;
   serv_addr.sin_addr.s_addr = INADDR_ANY;
-  serv_addr.sin_port = htons(2001);
+  serv_addr.sin_port = htons(atoi(argv[1]));
   memset(&(serv_addr.sin_zero), 0, 8);
   
   if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) error("ERROR on binding");
