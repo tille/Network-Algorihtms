@@ -8,7 +8,7 @@ public class TriquiServer {
 
   ServerSocket ss = null;
   Socket c = null, ant_c = null;
-  int port = 0, ind = 0;
+  int port = 0, ind = 0, cont = 0;
 
   public TriquiServer() {
     init(5555);
@@ -33,10 +33,15 @@ public class TriquiServer {
     while (true) {
       try {
         c = ss.accept();
-        TriquiSocketServer h = new TriquiSocketServer(c);
-        Thread t1 = new Thread(h);
-        t1.start();
-        //c.close();
+        if(cont==0){
+          ant_c = c;
+          cont = 1;
+        }else{
+          TriquiSocketServer h = new TriquiSocketServer(c,ant_c);
+          Thread t1 = new Thread(h);
+          t1.start();
+          cont = 0;
+        }
       } catch (Exception e) {
         e.printStackTrace();
       }

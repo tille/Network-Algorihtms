@@ -8,14 +8,16 @@ import java.lang.Thread;
 
 public class TriquiSocketServer extends Thread {
 
-  Socket c = null;
-  DataInputStream dis = null;
-  DataOutputStream dos = null;
+  Socket c = null, c1 = null;
+  DataInputStream dis = null, dis2 = null;
+  DataOutputStream dos = null, dos2 = null;
   TriquiGame triqui = null;
   String[] command = null; // variable donde recibe un comando con sus argumentos
+  int player = 0, cont = 1;
 
-  public TriquiSocketServer(Socket c) {
-    this.c = c;
+  public TriquiSocketServer(Socket p1, Socket p2) {
+    this.c = p1;
+    this.c1 = p2;
     open();
     triqui = new TriquiGame();
     System.out.println("Nueva conexion...");
@@ -28,7 +30,7 @@ public class TriquiSocketServer extends Thread {
       String response;
       
       while (!cmd.equals("QUIT")) {
-          
+        
         if (cmd.equals("START")){ 
           triqui.Start();
         }else if (cmd.equals("PLAY")) {
@@ -37,7 +39,8 @@ public class TriquiSocketServer extends Thread {
           response = Boolean.toString(res);
           sendResponse(response);
         }else if (cmd.equals("PLAYER")){
-          response = triqui.Player();
+          //response = triqui.Player();
+          response = (player==0)?"O":"X";
           sendResponse(response);
         }else if (cmd.equals("BOARD")){
           response = triqui.Board();
@@ -46,7 +49,8 @@ public class TriquiSocketServer extends Thread {
           response = triqui.TestWinner();
           sendResponse(response);
         }  
-      
+
+        player = (player==0)?1:0;
         cmd = recvRequest();
         System.out.println("Comando: "+cmd);
       }
@@ -61,7 +65,8 @@ public class TriquiSocketServer extends Thread {
   private String recvRequest() {
     String msg = null;
     try {
-      msg = dis.readUTF();
+      if(player==0) msg = dis.readUTF();
+      else msg = dis2.readUTF();
     } catch (IOException ex) {
       Logger.getLogger(TriquiSocketServer.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -71,7 +76,9 @@ public class TriquiSocketServer extends Thread {
 
   private void sendResponse(String msg) {
     try {
-      dos.writeUTF(msg);
+      if(player==0) dos.writeUTF(msg);
+      else dos2.writeUTF(msg);
+      //player = (player==0)?1:0;
     } catch (IOException ex) {
       Logger.getLogger(TriquiSocketServer.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -81,6 +88,8 @@ public class TriquiSocketServer extends Thread {
     try {
       dis = new DataInputStream(c.getInputStream());
       dos = new DataOutputStream(c.getOutputStream());
+      dis2 = new DataInputStream(c1.getInputStream());
+      dos2 = new DataOutputStream(c1.getOutputStream());
     } catch (UnknownHostException ex) {
       Logger.getLogger(TriquiSocketClient.class.getName()).log(Level.SEVERE, null, ex);
     } catch (IOException ex) {
