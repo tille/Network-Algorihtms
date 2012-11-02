@@ -25,7 +25,7 @@ public class TriquiPlayerSocket {
   }
 
   private void play() {
-    triqui.send("START,");
+    //triqui.send("START,");
     String winner = "N";
     int contplay = 0;
     boolean valid = false;
@@ -33,6 +33,11 @@ public class TriquiPlayerSocket {
     String board = null;
 
     while (winner.equals("N") && contplay < 9) {
+      System.out.println("Espere su turno.");
+      
+      //boolean begin = Boolean.parseBoolean(triqui.recv());
+      //if(!begin) continue;
+      
       triqui.send("PLAYER,");
       player = triqui.recv();
 
@@ -49,9 +54,13 @@ public class TriquiPlayerSocket {
 
         triqui.send("PLAY,"+pos);
         valid = Boolean.parseBoolean(triqui.recv());
+        
+        triqui.send("BOARD,");
+        board = triqui.recv();
+        System.out.println(board);
 
         if (!valid) System.out.println(">>> Jugada invalida");
-      }while (!valid);      
+      }while (!valid);
 
       triqui.send("TESTWINNER,");
       winner = triqui.recv();
@@ -66,16 +75,16 @@ public class TriquiPlayerSocket {
     System.out.print("Continuar? (y/n) = ");
   }
 
-    public void run() {
-      String input = "y";
-      while (input.equals("y")) {
-        play();
-        input = keyboard();
-      }
+  public void run() {
+    String input = "y";
+    while (input.equals("y")) {
+      play();
+      input = keyboard();
     }
+  }
 
-    public static void main(String[] args) {
-      TriquiPlayerSocket t = new TriquiPlayerSocket(args[0], Integer.parseInt(args[1]));
-      t.run();
-    }
+  public static void main(String[] args) {
+    TriquiPlayerSocket t = new TriquiPlayerSocket(args[0], Integer.parseInt(args[1]));
+    t.run();
+  }
 }

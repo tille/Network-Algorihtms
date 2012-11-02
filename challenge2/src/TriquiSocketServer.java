@@ -21,36 +21,49 @@ public class TriquiSocketServer extends Thread {
     open();
     triqui = new TriquiGame();
     System.out.println("Nueva conexion...");
+    triqui.Start();
   }
 
   public void run(){
     try {
+      
+      String response;
+      //response = Boolean.toString(true);
+      //sendResponse(response);
+      
       String cmd = recvRequest();
       System.out.println("Comando: "+cmd);
-      String response;
-      
+
       while (!cmd.equals("QUIT")) {
-        
-        if (cmd.equals("START")){ 
-          triqui.Start();
-        }else if (cmd.equals("PLAY")) {
+
+        //response = Boolean.toString(true);
+        //sendResponse(response);
+
+        boolean error = true;
+        if (cmd.equals("PLAY")) {
           int pos = Integer.parseInt(command[1])-1;
           boolean res = triqui.Play(pos);
           response = Boolean.toString(res);
           sendResponse(response);
+          error = false;
         }else if (cmd.equals("PLAYER")){
-          //response = triqui.Player();
           response = (player==0)?"O":"X";
           sendResponse(response);
+          error = false;
         }else if (cmd.equals("BOARD")){
           response = triqui.Board();
           sendResponse(response);
+          error = false;
         }else if (cmd.equals("TESTWINNER")) {
           response = triqui.TestWinner();
           sendResponse(response);
-        }  
+        }
 
-        player = (player==0)?1:0;
+        if(error){
+          //response = Boolean.toString(false);
+          //sendResponse(response);
+          player = (player==0)?1:0;
+        }
         cmd = recvRequest();
         System.out.println("Comando: "+cmd);
       }
