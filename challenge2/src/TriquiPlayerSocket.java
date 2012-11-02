@@ -41,6 +41,12 @@ public class TriquiPlayerSocket {
       triqui.send("PLAYER,");
       player = triqui.recv();
 
+      if(Boolean.parseBoolean(player)){ 
+        triqui.send("TESTWINNER,");
+        winner = triqui.recv();
+        break;
+      }
+
       triqui.send("BOARD,");
       board = triqui.recv();
 
@@ -72,14 +78,16 @@ public class TriquiPlayerSocket {
 
     System.out.println(board);
     System.out.println("Ganador: " + winner);
-    System.out.print("Continuar? (y/n) = ");
+    //System.out.print("Continuar? (y/n) = ");
   }
 
   public void run() {
     String input = "y";
     while (input.equals("y")) {
       play();
-      input = keyboard();
+      //input = keyboard();
+      System.out.print("Gracias por Jugar.");
+      input = "n";
     }
   }
 

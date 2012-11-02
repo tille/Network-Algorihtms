@@ -48,14 +48,17 @@ public class TriquiSocketServer extends Thread {
           error = false;
         }else if (cmd.equals("PLAYER")){
           response = (player==0)?"O":"X";
+          if(triqui.TestWinner()!="N") response = Boolean.toString(true);;
           sendResponse(response);
           error = false;
         }else if (cmd.equals("BOARD")){
           response = triqui.Board();
           sendResponse(response);
           error = false;
+          if(triqui.TestWinner()!="N") error = true;
         }else if (cmd.equals("TESTWINNER")) {
           response = triqui.TestWinner();
+          if(response!="N") error = false;
           sendResponse(response);
         }
 
