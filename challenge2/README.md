@@ -1,33 +1,37 @@
-# Jorman Bustos
+Challenge 2
+===========
 
-Challenge 1 - Advanced topics in telematic
+This is a version of the famous game "triqui", developed with a distributed arquitecture.
+the players can play in different machines and the set ends when one of them complete a consecutive sequence of three "O" or "X".
 
-## Setup
+Clone the repository:
 
-Only Run in Unix Arquitectures
+````bash
+$ git clone git@github.com:Tille/Network-Algorihtms.git
+$ cd Network-Algorihtms
+````
 
-You must have install GCC and G++ 
-For compile the files run this:
-  
-  g++ server.cpp -o server
-  g++ client.cpp -o client
-  
-## Run
+Compile the files:
 
-for run the server run this is the command:
-  
-  ./server port
+````bash
+$ ant init
+$ ant compile
+````
 
-and for run the client only run the binary file with specified server and port 
+Run the server:
 
-  ./client server_ip port
-  
-## Examples
+````bash
+$ ant server-run
+````
 
-  ( ( 2 + 2 ) * 4 ) / 2
-  
-  ( ( 2.1 * 3.4 ) + 2 )
-  
-  ( 2 + 4 * 3 )
-  
-  1.34 + 500.871 * 3.4
+Run a client (there must be almost two players/clients for play):
+
+````bash
+$ ant client-run
+````
+
+Clean the folder:
+
+````bash
+$ ant clean
+````
