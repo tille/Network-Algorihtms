@@ -14,7 +14,7 @@ import org.w3c.dom.Document;
 
 /**
  *
- * @author HORUS793
+ * @author Usuario
  */
 public class XMLOperationsSingleton {
 

@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author HORUS793
+ * @author Usuario
  */
 @XStreamAlias("webservices")
 public class WebServices {

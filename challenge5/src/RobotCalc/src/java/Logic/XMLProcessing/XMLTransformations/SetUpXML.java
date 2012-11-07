@@ -18,7 +18,7 @@ import java.io.Writer;
 
 /**
  *
- * @author HORUS793
+ * @author Usuario
  */
 public class SetUpXML {
     //Replacer utilizado para evitar el doble underline

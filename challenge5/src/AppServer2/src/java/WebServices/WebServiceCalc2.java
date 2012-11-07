@@ -11,7 +11,7 @@ import javax.jws.WebService;
 
 /**
  *
- * @author HORUS793
+ * @author Usuario
  */
 @WebService(serviceName = "WebServiceCalc2")
 public class WebServiceCalc2 {

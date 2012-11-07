@@ -7,7 +7,7 @@ package Logic;
 
 /**
  *
- * @author HORUS793
+ * @author Usuario
  */
 public class Calc1 {
     

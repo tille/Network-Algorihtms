@@ -8,7 +8,7 @@ import Logic.XMLProcessing.XMLTransformations.XMLOperations;
 
 /**
  *
- * @author HORUS793
+ * @author Usuario
  */
 public class Test {
 

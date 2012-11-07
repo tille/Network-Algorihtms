@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author HORUS793
+ * @author Usuario
  */
 public class XMLReadingSingleton {
 

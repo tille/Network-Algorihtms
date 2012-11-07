@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author HORUS793
+ * @author Usuario
  */
 public class CalcProxy {
     ArrayList<String> urlList;

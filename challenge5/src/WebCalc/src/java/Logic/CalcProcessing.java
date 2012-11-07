@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author HORUS793
+ * @author Usuario
  */
 public class CalcProcessing {
     

@@ -4,7 +4,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
  *
- * @author HORUS793
+ * @author Usuario
  */
 @XStreamAlias("webservice")
 public class WebService {

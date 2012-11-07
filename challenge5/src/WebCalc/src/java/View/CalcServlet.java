@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author HORUS793
+ * @author Usuario
  */
 @WebServlet(name = "CalcServlet", urlPatterns = {"/CalcServlet"})
 public class CalcServlet extends HttpServlet {

@@ -12,7 +12,7 @@ import org.jdom.input.SAXBuilder;
 
 /**
  *
- * @author HORUS793
+ * @author Usuario
  */
 public class XMLOperations {
 

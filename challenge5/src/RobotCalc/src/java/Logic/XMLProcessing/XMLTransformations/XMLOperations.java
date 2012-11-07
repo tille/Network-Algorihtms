@@ -22,7 +22,7 @@ import org.xml.sax.SAXException;
 
 /**
  *
- * @author HORUS793
+ * @author Usuario
  */
 public class XMLOperations {
 

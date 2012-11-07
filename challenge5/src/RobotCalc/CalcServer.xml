@@ -3,10 +3,10 @@
     <url>http://localhost:8080/AppServer1/WebServiceCalc1?wsdl</url>
     <method>+</method>
     <params>
-      <p1>10</p1>
+      <p1>40</p1>
       <p2>20</p2>
     </params>
-    <result>30.0</result>
+    <result>60.0</result>
   </webservice>
   <webservice>
     <url>http://localhost:8080/AppServer2/WebServiceCalc2?wsdl</url>
