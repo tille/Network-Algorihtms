@@ -2,6 +2,7 @@ Challenge 2
 ===========
 
 This is a version of the famous game "triqui", developed with a distributed arquitecture.
+
 the players can play in different machines and the set ends when one of them complete a consecutive sequence of three "O" or "X".
 
 Clone the repository:
