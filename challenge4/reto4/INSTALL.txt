@@ -1,0 +1,30 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang3082{\fonttbl{\f0\fmodern\fprq1\fcharset0 Courier New;}{\f1\fswiss\fprq2\fcharset0 Arial;}}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\lang1034\f0\fs22 T\'f3picos Especiales en Telem\'e1tica\par
+\par
+Carlos Adri\'e1n Tob\'f3n P\'e9rez\par
+Paola Andrea Vallejo Correa\par
+\par
+Servicio de Anuncios Utilizando MOM\par
+\par
+\par
+Requisitos de Software:\par
+\par
+\pard\qj\lang3082 1. Guarde la Carpeta "openjms-0.7.7-beta-1" en su computador\par
+2. Ingrese a la carpeta y posteriormente ingrese a la subcarpeta "bin"\par
+3. Haga Doble Click sobre "startup"\par
+\pard 4. Se abrir\'e1 una consola que no debe cerrar hasta terminar la ejecuci\'f3n de la aplicaci\'f3n\par
+\par
+Ejecuci\'f3n:\par
+\par
+Proveedor:\par
+\par
+1. Copie la carpeta "Ejecutables" en su computador\par
+2. Haga Doble click sobre "Advertisement"\par
+\par
+Cliente:\par
+\par
+1. haga Doble click sobre "distAdvertisementClient"\f1\fs24\par
+ \par
+\pard\f0\fs22\par
+}
+ 

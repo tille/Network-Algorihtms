@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://WebServices/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://WebServices/">
+
+<xs:element name="Add" type="tns:Add"/>
+
+<xs:element name="AddResponse" type="tns:AddResponse"/>
+
+<xs:element name="Multiply" type="tns:Multiply"/>
+
+<xs:element name="MultiplyResponse" type="tns:MultiplyResponse"/>
+
+<xs:complexType name="Multiply">
+<xs:sequence>
+<xs:element name="nmFirst" type="xs:float"/>
+<xs:element name="nmSecond" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MultiplyResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Add">
+<xs:sequence>
+<xs:element name="nmFirst" type="xs:float"/>
+<xs:element name="nmSecond" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AddResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

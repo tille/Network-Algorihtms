@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urls>
+    <url>http://localhost:8080/AppServer1/WebServiceCalc1?wsdl</url>
+    <url>http://localhost:8080/AppServer2/WebServiceCalc2?wsdl</url>
+</urls>
+
