@@ -10,6 +10,7 @@ You must have install GCC and G++
 For compile the files run this:
   
   g++ server.cpp -o server
+  
   g++ client.cpp -o client
   
 ## Run
