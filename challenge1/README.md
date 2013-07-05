@@ -6,7 +6,7 @@ Challenge 1 - Advanced topics in telematic
 
 Only Run in Unix Arquitectures
 
-You must have install GCC and G++ 
+You must have installed GCC and G++ 
 For compile the files run this:
   
   g++ server.cpp -o server
@@ -15,13 +15,13 @@ For compile the files run this:
   
 ## Run
 
-for run the server run this is the command:
+if you wanna lunch the server run this in your command line:
   
-  ./server port
+  ./server port_number
 
-and for run the client only run the binary file with specified server and port 
+and for lunch the client run this line, with an specifiec server ip and port number 
 
-  ./client server_ip port
+  ./client server_ip port_number
   
 ## Examples
 
